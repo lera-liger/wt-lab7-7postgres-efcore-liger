@@ -1,6 +1,7 @@
 ﻿# ===== Этап 1: Сборка =====
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+
 
 # Копируем csproj и восстанавливаем зависимости
 COPY *.csproj ./
